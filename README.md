@@ -7,6 +7,15 @@ A stripped down GlumityV2ToolSuite as a bridge to inject a small runtime tcc com
 # Demonstration 
 ![alt text](screenshots/screenshot1.png)
 
+## jit script example
+
+C```#include <GlumityLib/GlumityLib.h>
+
+EXPORT void GlumityMain(){
+	MessageBoxA(NULL, "Hello from hello.c, compiled with tcc!", "Example",  MB_OK);
+}
+```
+
 ## How to use built binaries
 
 1. Head to Releases and download a build
