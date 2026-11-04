@@ -23,5 +23,5 @@ Compiled scripts are inside ```"Plugins/jit_scripts/"```
 
 Running ```"buildAll.bat"``` inside root folder of repository should automatically build everything, the build scripts are relatively basic and barebones.  
 
-Output binaries end up inside ```"UniversalScriptor\build"```. To use them, refer to [How to use built binaries](##How-to-use-built-binaries)
+Output binaries end up inside ```"UniversalScriptor\build"```. To use them, refer to [How to use built binaries](#how-to-use-built-binaries)
 # **More documentation follows at some point** 
