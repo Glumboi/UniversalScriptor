@@ -1,0 +1,30 @@
+{
+    minhook = {
+        __requirestr = "minhook",
+        sysincludedirs = [[C:\Users\Glummy\AppData\Local\.xmake\packages\m\minhook\v1.3.4\8d05c08468c74988ab277784c71fd71a\include]],
+        license = "BSD-2-Clause",
+        libfiles = [[C:\Users\Glummy\AppData\Local\.xmake\packages\m\minhook\v1.3.4\8d05c08468c74988ab277784c71fd71a\lib\minhook.lib]],
+        version = "v1.3.4",
+        __enabled = true,
+        links = "minhook",
+        linkdirs = [[C:\Users\Glummy\AppData\Local\.xmake\packages\m\minhook\v1.3.4\8d05c08468c74988ab277784c71fd71a\lib]],
+        installdir = [[C:\Users\Glummy\AppData\Local\.xmake\packages\m\minhook\v1.3.4\8d05c08468c74988ab277784c71fd71a]],
+        static = true
+    },
+    lua = {
+        __requirestr = "lua",
+        sysincludedirs = [[C:\Users\Glummy\AppData\Local\.xmake\packages\l\lua\v5.4.7\1a5ff96f7a834c1baa1ec743738c5e59\include\lua]],
+        envs = {
+            PATH = {
+                [[C:\Users\Glummy\AppData\Local\.xmake\packages\l\lua\v5.4.7\1a5ff96f7a834c1baa1ec743738c5e59\bin]]
+            }
+        },
+        links = "lua",
+        version = "v5.4.7",
+        __enabled = true,
+        libfiles = [[C:\Users\Glummy\AppData\Local\.xmake\packages\l\lua\v5.4.7\1a5ff96f7a834c1baa1ec743738c5e59\lib\lua.lib]],
+        linkdirs = [[C:\Users\Glummy\AppData\Local\.xmake\packages\l\lua\v5.4.7\1a5ff96f7a834c1baa1ec743738c5e59\lib]],
+        installdir = [[C:\Users\Glummy\AppData\Local\.xmake\packages\l\lua\v5.4.7\1a5ff96f7a834c1baa1ec743738c5e59]],
+        static = true
+    }
+}
