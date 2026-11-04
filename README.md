@@ -4,6 +4,9 @@
 
 A stripped down GlumityV2ToolSuite as a bridge to inject a small runtime tcc compiler. Technically compatible with everything!
 
+# Demonstration 
+![alt text](screenshots/screenshot1.png)
+
 ## How to use built binaries
 
 1. Head to Releases and download a build

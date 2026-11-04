@@ -109,7 +109,7 @@ VOID ProcessJITScriptsFolder(const char *targetProgramFolder, const char *libDir
 
 VOID HotReloadJITScripts()
 {
-    HMODULE hCurrentDll = GetModuleHandleA("IL2CPPAPIBridge.dll");
+    HMODULE hCurrentDll = GetModuleHandleA("TCCBridge.dll");
 
     char pathBuffer[MAX_PATH] = {0};
     GetPluginDirectory(hCurrentDll, pathBuffer, sizeof(pathBuffer));
@@ -119,6 +119,8 @@ VOID HotReloadJITScripts()
     {
         strcat_s(pathBuffer, sizeof(pathBuffer), "\\");
     }
+
+    strcat_s(pathBuffer, sizeof(pathBuffer), "default_bridge_env\\");
 
     char libs[MAX_PATH];
     strcpy_s(libs, sizeof(libs), pathBuffer);
@@ -205,10 +207,6 @@ VOID Setup()
 
     strcat_s(libs, sizeof(libs), "tcc_libs");
     strcat_s(incs, sizeof(incs), "tcc_include");
-
-    GlumityPlugin_printf("pathbuffer: %s\n", MY_PLUGIN, pathBuffer);
-    GlumityPlugin_printf("libs: %s\n", MY_PLUGIN, libs);
-    GlumityPlugin_printf("incs: %s\n", MY_PLUGIN, incs);
 
     GetPluginDirectory(hCurrentDll, pathBuffer, sizeof(pathBuffer));
     ProcessJITScriptsFolder(pathBuffer, libs, incs);
