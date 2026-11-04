@@ -9,7 +9,7 @@ A stripped down GlumityV2ToolSuite as a bridge to inject a small runtime tcc com
 
 ## jit script example
 
-C```#include <GlumityLib/GlumityLib.h>
+```C #include <GlumityLib/GlumityLib.h>
 
 EXPORT void GlumityMain(){
 	MessageBoxA(NULL, "Hello from hello.c, compiled with tcc!", "Example",  MB_OK);
