@@ -20,6 +20,7 @@
 #endif
 #endif
 
+typedef void (*GlumityPlugin_rdr2_EntryPoint)(HMODULE bridgeInstance);
 typedef void (*GlumityPlugin_EntryPoint)(void);
 typedef BOOL (*GlumityPlugin_ExitPoint)(void);
 typedef void (*GlumityGeneric_Func)(void);
@@ -80,6 +81,7 @@ typedef struct
     char dllPath[DLL_PATH_MAX];
     char *name;
     GlumityPlugin_EntryPoint entryPoint;
+    GlumityPlugin_rdr2_EntryPoint entryPointRdr;
     GlumityPlugin_ExitPoint exitPoint;
 
     HMODULE hDll;

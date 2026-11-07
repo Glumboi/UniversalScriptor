@@ -37,7 +37,7 @@ inline void GlumityV2_TrackedCreateHook_OverBRidge()
 {
     if (g_TrackedHookBridgePtr == NULL)
     {
-        HMODULE hModule = GetModuleHandleA("IL2CPPAPIBridge.dll");
+        HMODULE hModule = GetModuleHandleA("TCCBridge-rdr2.dll");
         if (hModule != NULL)
         {
             g_TrackedHookBridgePtr = (GlumityV2_TrackedCreateHook_t)GetProcAddress(hModule, "GlumityV2_TrackedCreateHook");

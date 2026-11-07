@@ -11,6 +11,27 @@ import config "dllLoaderConfig"
 import "exports"
 import "helpers"
 
+foreign import kernel32 "system:Kernel32.lib"
+
+@(default_calling_convention = "system")
+foreign kernel32 {
+	GetConsoleWindow :: proc() -> windows.HWND ---
+}
+
+console_watchdog :: proc "std" (param: rawptr) -> u32 {
+	context = runtime.default_context()
+	for {
+		if GetConsoleWindow() == nil {
+			if windows.AllocConsole() {
+				c.freopen("conout$", "w", c.stdout)
+				exports.Glumity_printf("Console re-created by watchdog\n")
+			}
+		}
+		windows.Sleep(500)
+	}
+	return 0
+}
+
 g_pluginLoader: dllLoader.dllLoader
 g_cfg: config.loaderConfig
 
@@ -19,6 +40,7 @@ setup :: proc() {
 
 	if g_cfg.useConsole && helpers.init_console() {
 		exports.Glumity_printf("Initialized console...\n")
+		windows.CreateThread(nil, 0, console_watchdog, nil, 0, nil)
 	}
 
 	g_pluginLoader = dllLoader.dllLoader_create()
